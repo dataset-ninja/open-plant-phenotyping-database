@@ -1,34 +1,46 @@
 from typing import Dict, List, Optional, Union
 
-from dataset_tools.templates import AnnotationType, CVTask, Industry, Domain, Research, License, Category
+from dataset_tools.templates import (
+    AnnotationType,
+    CVTask,
+    Industry,
+    Domain,
+    Research,
+    License,
+    Category,
+)
 
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = None
-PROJECT_NAME_FULL: str = None
+PROJECT_NAME: str = "OPPD"
+PROJECT_NAME_FULL: str = "Open Plant Phenotyping Database"
 
 ##################################
 # * After uploading to instance ##
 ##################################
-LICENSE: License = None
-APPLICATIONS: List[Union[Industry, Domain, Research]] = None
-CATEGORY: Category = None
+LICENSE: License = License.CC_BY_NC_SA_4_0()
+APPLICATIONS: List[Union[Industry, Domain, Research]] = [
+    Industry.Agricultural(),
+    Domain.Industrial(),
+    Research.Agricultural(),
+]
+CATEGORY: Category = Category.Agriculture()
 
-CV_TASKS: List[CVTask] = None
-ANNOTATION_TYPES: List[AnnotationType] = None
+CV_TASKS: List[CVTask] = [CVTask.ObjectDetection()]
+ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.ObjectDetection()]
 
 RELEASE_DATE: Optional[str] = None  # e.g. "YYYY-MM-DD"
 if RELEASE_DATE is None:
-    RELEASE_YEAR: int = None
+    RELEASE_YEAR: int = 2020
 
-HOMEPAGE_URL: str = None
+HOMEPAGE_URL: str = "https://vision.eng.au.dk/open-plant-phenotyping-database/"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = None
+PREVIEW_IMAGE_ID: int = 1685625
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
-GITHUB_URL: str = None
+GITHUB_URL: str = "https://github.com/dataset-ninja/open-plant-phenotyping-database"
 # URL to GitHub repo on dataset ninja (e.g. "https://github.com/dataset-ninja/some-dataset")
 
 ##################################
@@ -40,9 +52,22 @@ DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = None
 CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
-PAPER: Optional[str] = None
+PAPER: Optional[str] = "https://www.mdpi.com/2072-4292/12/8/1246"
 CITATION_URL: Optional[str] = None
-AUTHORS: Optional[List[str]] = None
+AUTHORS: Optional[List[str]] = [
+    "Madsen",
+    "Simon Leminen",
+    "Mathiassen",
+    "Solvejg Kopp",
+    "Dyrmann",
+    "Mads",
+    "Laursen",
+    "Morten Stigaard",
+    "Paz",
+    "Laura-Carlota",
+    "Jorgensen",
+    "Rasmus Nyholm",
+]
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = None
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = None
