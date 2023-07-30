@@ -2,27 +2,26 @@ from typing import Dict, List, Optional, Union
 
 from dataset_tools.templates import (
     AnnotationType,
-    CVTask,
-    Industry,
-    Domain,
-    Research,
-    License,
     Category,
+    CVTask,
+    Domain,
+    Industry,
+    License,
+    Research,
 )
 
 ##################################
 # * Before uploading to instance #
 ##################################
 PROJECT_NAME: str = "OPPD"
-PROJECT_NAME_FULL: str = "Open Plant Phenotyping Database"
+PROJECT_NAME_FULL: str = "OPPD: Open Plant Phenotyping Database"
 
 ##################################
 # * After uploading to instance ##
 ##################################
 LICENSE: License = License.CC_BY_NC_SA_4_0()
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [
-    Industry.Agricultural(),
-    Domain.Industrial(),
+    Industry.Agricultural(is_used=False),
     Research.Agricultural(),
 ]
 CATEGORY: Category = Category.Agriculture()
@@ -30,9 +29,9 @@ CATEGORY: Category = Category.Agriculture()
 CV_TASKS: List[CVTask] = [CVTask.ObjectDetection()]
 ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.ObjectDetection()]
 
-RELEASE_DATE: Optional[str] = None  # e.g. "YYYY-MM-DD"
+RELEASE_DATE: Optional[str] = "2020-04-14"  # e.g. "YYYY-MM-DD"
 if RELEASE_DATE is None:
-    RELEASE_YEAR: int = 2020
+    RELEASE_YEAR: int = None
 
 HOMEPAGE_URL: str = "https://vision.eng.au.dk/open-plant-phenotyping-database/"
 # e.g. "https://some.com/dataset/homepage"
@@ -46,31 +45,31 @@ GITHUB_URL: str = "https://github.com/dataset-ninja/open-plant-phenotyping-datab
 ##################################
 ### * Optional after uploading ###
 ##################################
-DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = None
+DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = "https://gitlab.au.dk/AUENG-Vision/OPPD"
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
 CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
 PAPER: Optional[str] = "https://www.mdpi.com/2072-4292/12/8/1246"
-CITATION_URL: Optional[str] = None
+CITATION_URL: Optional[str] = "https://vision.eng.au.dk/open-plant-phenotyping-database"
 AUTHORS: Optional[List[str]] = [
-    "Madsen",
-    "Simon Leminen",
-    "Mathiassen",
-    "Solvejg Kopp",
-    "Dyrmann",
-    "Mads",
-    "Laursen",
-    "Morten Stigaard",
-    "Paz",
-    "Laura-Carlota",
-    "Jorgensen",
-    "Rasmus Nyholm",
+    "Madsen, Simon Leminen",
+    "Mathiassen, Solvejg Kopp",
+    "Dyrmann, Mads",
+    "Laursen, Morten Stigaard",
+    "Paz, Laura-Carlota",
+    "Jorgensen, Rasmus Nyholm",
 ]
 
-ORGANIZATION_NAME: Optional[Union[str, List[str]]] = None
-ORGANIZATION_URL: Optional[Union[str, List[str]]] = None
+ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
+    "Aarhus University, Denmark",
+    "I-GIS A/S, Denmark",
+]
+ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
+    "https://international.au.dk/",
+    "https://i-gis.dk/en-us/",
+]
 
 SLYTAGSPLIT: Optional[Dict[str, List[str]]] = None
 TAGS: Optional[List[str]] = None

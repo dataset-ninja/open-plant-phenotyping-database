@@ -1,6 +1,6 @@
 If you make use of the OPPD data, please cite the following reference:
 
-``` bibtex 
+```bibtex
 @article{Madsen2020OPPD,
 author = {Madsen, Simon Leminen and Mathiassen, Solvejg Kopp and Dyrmann, Mads and Laursen, Morten Stigaard and Paz, Laura-Carlota and J{\o}rgensen, Rasmus Nyholm},
 doi = {10.3390/RS12081246},
@@ -17,4 +17,4 @@ year = {2020}
 }
 ```
 
-[🔗 Source](https://vision.eng.au.dk/open-plant-phenotyping-database/)
+[🔗 Source](https://vision.eng.au.dk/open-plant-phenotyping-database)
