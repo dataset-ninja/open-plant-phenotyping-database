@@ -32,11 +32,13 @@ def convert_and_upload_supervisely_project(
     datasets_paths = [f.path for f in os.scandir(datasets_folder) if f.is_dir()]
 
     pbar = tqdm.tqdm(desc="TOTAL DATASETS DONE", total=len(datasets_paths))
+    dataset = api.dataset.get_or_create(project.id, "ds0")
     for dataset_dir in datasets_paths:
-        dataset_name = os.path.basename(dataset_dir)
-        dataset = api.dataset.get_or_create(
-            project.id, dataset_name
-        )  # api.dataset.create(project.id, dataset_name)
+        tag_value = os.path.basename(dataset_dir)
+        code_tag_name = "EPPO code"
+        tag_name = "Growth condition"
+        tag_value_type = sly.TagValueType.ANY_STRING
+        # api.dataset.create(project.id, dataset_name)
 
         ann_paths = sly.fs.list_files(dataset_dir, valid_extensions=[".json"])
         for ann_path in ann_paths:
@@ -51,16 +53,20 @@ def convert_and_upload_supervisely_project(
                 # (print(f"image(id:{image_info.id}) is uploaded to dataset (id:{dataset.id})."))
 
                 # check tagmeta in project and init if needed
-                tag_name = "Growth condition"
-                tag_value_type = sly.TagValueType.ANY_STRING
                 tag_meta = meta.get_tag_meta(tag_name)
                 if tag_meta is None:
                     tag_meta = sly.TagMeta(tag_name, tag_value_type)
                     meta = meta.add_tag_meta(tag_meta)
                     api.project.update_meta(dataset.project_id, meta)
+                    code_tag_meta = meta.get_tag_meta(code_tag_name)
+                    if code_tag_meta is None:
+                        code_tag_meta = sly.TagMeta(code_tag_name, tag_value_type)
+                        meta = meta.add_tag_meta(code_tag_meta)
+                        api.project.update_meta(dataset.project_id, meta)
 
                 # add tag to image
                 tag = sly.Tag(tag_meta, ann_json["growth_condition"])
+                code_tag = sly.Tag(code_tag_meta, tag_value)
 
                 labels = []
                 for plant in ann_json["plants"]:
@@ -82,7 +88,7 @@ def convert_and_upload_supervisely_project(
                 ann = sly.Annotation(
                     img_size=[image_info.height, image_info.width],
                     labels=labels,
-                    img_tags=[tag],
+                    img_tags=[tag, code_tag],
                 )
                 api.annotation.upload_ann(image_info.id, ann)
             except Exception as e:
