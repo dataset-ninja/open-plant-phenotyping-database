@@ -36,7 +36,7 @@ if RELEASE_DATE is None:
 HOMEPAGE_URL: str = "https://vision.eng.au.dk/open-plant-phenotyping-database/"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 1685625
+PREVIEW_IMAGE_ID: int = 2170278
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/open-plant-phenotyping-database"
