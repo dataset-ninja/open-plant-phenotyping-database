@@ -15,6 +15,7 @@ from dataset_tools.templates import (
 ##################################
 PROJECT_NAME: str = "OPPD"
 PROJECT_NAME_FULL: str = "OPPD: Open Plant Phenotyping Database"
+HIDE_DATSET = False
 
 ##################################
 # * After uploading to instance ##
@@ -22,9 +23,9 @@ PROJECT_NAME_FULL: str = "OPPD: Open Plant Phenotyping Database"
 LICENSE: License = License.CC_BY_NC_SA_4_0()
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [
     Industry.Agricultural(is_used=False),
-    Research.Agricultural(),
+    Research.Biological(),
 ]
-CATEGORY: Category = Category.Agriculture()
+CATEGORY: Category = Category.Biology()
 
 CV_TASKS: List[CVTask] = [CVTask.ObjectDetection()]
 ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.ObjectDetection()]
