@@ -17,4 +17,4 @@ year = {2020}
 }
 ```
 
-[🔗 Source](https://vision.eng.au.dk/open-plant-phenotyping-database)
+[Source](https://vision.eng.au.dk/open-plant-phenotyping-database)
