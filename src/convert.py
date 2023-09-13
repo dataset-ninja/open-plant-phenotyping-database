@@ -77,9 +77,10 @@ def convert_and_upload_supervisely_project(
                     # xmin, ymin, xmax, ymax = list(obj["bndbox"].values())
                     bbox = sly.Rectangle(top=ymin, left=xmin, bottom=ymax, right=xmax)
                     class_name = plant["eppo"]
-                    obj_class = meta.get_obj_class(class_name)
+                    class_name_stripped = class_name.strip()
+                    obj_class = meta.get_obj_class(class_name_stripped)
                     if obj_class is None:
-                        obj_class = sly.ObjClass(class_name, sly.Rectangle)
+                        obj_class = sly.ObjClass(class_name_stripped, sly.Rectangle)
                         meta = meta.add_obj_class(obj_class)
                         api.project.update_meta(project.id, meta)
                     label = sly.Label(bbox, obj_class)
