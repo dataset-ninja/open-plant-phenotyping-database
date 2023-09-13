@@ -15,7 +15,7 @@ from dataset_tools.templates import (
 ##################################
 PROJECT_NAME: str = "OPPD"
 PROJECT_NAME_FULL: str = "OPPD: Open Plant Phenotyping Database"
-HIDE_DATSET = False
+HIDE_DATASET = False
 
 ##################################
 # * After uploading to instance ##
