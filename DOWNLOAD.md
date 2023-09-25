@@ -1,6 +1,6 @@
 Dataset **OPPD** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/6/A/q1/3S324wg5DCSj6k6dBFYgnZULLGUii0RlW99OMnv02SKp7G3eBIE5TtbPhqrJFGUJINvpPcVxbvHhzrC0lESiQU6wTEiRgloiA2iHQWIrmKeMpOcBxhh20xS4YRLN.tar)
+ [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/H/B/4x/jNIu4fm0gmWlr2MkjlBw301AFPvvC2Cthbss5JtO7IvCnL8xBt0FKjFebnoWej3gVFkg7I5K2FoHvUqZygxkbMUFFasPNaE3yXSqVhFwEIY3gF41H27veBXg3jPW.tar)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
