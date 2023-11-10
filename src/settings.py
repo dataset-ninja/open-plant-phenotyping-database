@@ -56,7 +56,7 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 # Use dict key to specify name for a button
 PAPER: Optional[Union[str, List[str], Dict[str, str]]] = "https://www.mdpi.com/2072-4292/12/8/1246"
 BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
-REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = None
+REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {"GitLab":"https://gitlab.au.dk/AUENG-Vision/OPPD"}
 
 CITATION_URL: Optional[str] = "https://vision.eng.au.dk/open-plant-phenotyping-database"
 AUTHORS: Optional[List[str]] = [
