@@ -1,3 +1,3 @@
-# OPPD: Open Plant Phenotyping Database
+# OPPD: Open Plant Phenotyping Database - Full Images
 
-OPPD is a dataset for object detection task.
+OPPD: Full Images is a dataset for object detection task.

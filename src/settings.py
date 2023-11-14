@@ -13,9 +13,9 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = "OPPD"
-PROJECT_NAME_FULL: str = "OPPD: Open Plant Phenotyping Database"
-HIDE_DATASET = False  # set False when 100% sure about repo quality
+PROJECT_NAME: str = "OPPD: Full Images"
+PROJECT_NAME_FULL: str = "OPPD: Open Plant Phenotyping Database - Full Images"
+HIDE_DATASET = True  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
@@ -37,7 +37,7 @@ if RELEASE_DATE is None:
 HOMEPAGE_URL: str = "https://vision.eng.au.dk/open-plant-phenotyping-database/"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 2170278
+PREVIEW_IMAGE_ID: int = 8738157
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/open-plant-phenotyping-database"
@@ -56,7 +56,9 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 # Use dict key to specify name for a button
 PAPER: Optional[Union[str, List[str], Dict[str, str]]] = "https://www.mdpi.com/2072-4292/12/8/1246"
 BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
-REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {"GitLab":"https://gitlab.au.dk/AUENG-Vision/OPPD"}
+REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {
+    "GitLab": "https://gitlab.au.dk/AUENG-Vision/OPPD"
+}
 
 CITATION_URL: Optional[str] = "https://vision.eng.au.dk/open-plant-phenotyping-database"
 AUTHORS: Optional[List[str]] = [
@@ -78,7 +80,9 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
 ]
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
-SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = None
+SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
+    "Additionally, every image contains following tags: ***eppo***, ***latin***, ***english***, ***upload_id***, ***image_id***, ***date***, ***trial_id***, ***box_id***, ***growth_condition***"
+}
 TAGS: Optional[List[str]] = None
 
 
