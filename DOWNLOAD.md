@@ -1,6 +1,6 @@
 Dataset **OPPD: Full Images** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/z/j/gS/ls3KssOxVvJaCJZ8Aj9685ptTcVlRJXg9j7SsgkpRo3MkbM3QP8IBdFxEWG4iW9k3haOzVgCy2qjxzQPruQiATYWMS9HvbECYSNPguOjHPEKWPKnxNR3akKWKaJT.tar)
+ [Download](https://www.dropbox.com/scl/fi/3iro0ib5fvqqdibevrdh9/oppd-full-images-DatasetNinja.tar?rlkey=7cxvr3db9quqburng8wzl3buz&dl=1)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
